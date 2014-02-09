@@ -1,0 +1,365 @@
+/**
+Core Front-end Styling for Aqua Page Builder
+
+Themes should include their own styling for the blocks.
+That includes for responsive design etc, please don't
+ask me to add that for you. I hate responsive designs
+
+DO NOT EDIT THIS
+	
+**/
+
+/** MISC **/
+.cf:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.cf{display:block;}
+
+/** Basic grid columns 
+-----------------------*/
+/** 
+For those who fancy fixed widths,
+copy this into your theme stylesheet
+
+[class*="aq_span"] {
+	float: left;
+	margin-left: 20px;
+}
+
+.aq-template-wrapper .aq_span12 {width: 940px;}
+.aq-template-wrapper .aq_span11 {width: 860px;}
+.aq-template-wrapper .aq_span10 {width: 780px;}
+.aq-template-wrapper .aq_span9 {width: 700px;}
+.aq-template-wrapper .aq_span8 {width: 620px;}
+.aq-template-wrapper .aq_span7 {width: 540px;}
+.aq-template-wrapper .aq_span6 {width: 460px;}
+.aq-template-wrapper .aq_span5 {width: 380px;}
+.aq-template-wrapper .aq_span4 {width: 300px;}
+.aq-template-wrapper .aq_span3 {width: 220px;}
+.aq-template-wrapper .aq_span2 {width: 140px;}
+.aq-template-wrapper .aq_span1 {width: 60px;}
+
+*/
+
+[class*="aq_span"] {
+	float: left;
+	margin-left: 3%;
+}
+
+.aq-template-wrapper .aq_span1 { width:5.58%; }
+.aq-template-wrapper .aq_span2 { width:14.16%; }
+.aq-template-wrapper .aq_span3 { width:22.75%; }
+.aq-template-wrapper .aq_span4 { width:31.33%; }
+.aq-template-wrapper .aq_span5 { width:39.92%; }
+.aq-template-wrapper .aq_span6 { width:48.5%; }
+.aq-template-wrapper .aq_span7 { width:57.08%; }
+.aq-template-wrapper .aq_span8 { width:65.67%; }
+.aq-template-wrapper .aq_span9 { width:74.25%; }
+.aq-template-wrapper .aq_span10 { width:82.83%; }
+.aq-template-wrapper .aq_span11 { width:91.42%; }
+.aq-template-wrapper .aq_span12 { width:100%; }
+
+.aq-template-wrapper .aq-first {margin-left: 0;}
+
+/** Blocks 
+-----------------------*/
+.aq-block {  }
+
+/* clear block */
+.aq-block-aq_clear_block { margin-bottom: 0px; }
+.aq-block-hr-single { margin-bottom: 20px; }
+.aq-block-hr-double { margin-bottom: 0px; }
+
+
+/* column block */
+
+/* To calculate the widths, use this (PHP):
+echo '<pre>';
+
+$columns = range(1,12);
+$childcols = array();
+foreach($columns as $column) {
+	$childcols = range(1, $column);
+	foreach($childcols as $childcol) {
+		$class = '.aq-template-wrapper .aq_span'.$column.' .aq_span'.$childcol;
+		
+		$margin = 5;
+		
+		$width = ( 100 + $margin ) / ( $column ) * ( $childcol ) - ( $margin );
+		
+		$width = round($width, 2);
+		
+		print_r($class . ' { width:'. $width .'%; }<br/>');
+	}
+	
+}
+
+echo '</pre>';
+
+**/
+.aq-block-aq_column_block, .block-container { margin-bottom: 0px; }
+.aq-template-wrapper .aq_span1 .aq_span1 { width:100%; }
+.aq-template-wrapper .aq_span2 .aq_span1 { width:47.5%; }
+.aq-template-wrapper .aq_span2 .aq_span2 { width:100%; }
+.aq-template-wrapper .aq_span3 .aq_span1 { width:30%; }
+.aq-template-wrapper .aq_span3 .aq_span2 { width:65%; }
+.aq-template-wrapper .aq_span3 .aq_span3 { width:100%; }
+.aq-template-wrapper .aq_span4 .aq_span1 { width:21.25%; }
+.aq-template-wrapper .aq_span4 .aq_span2 { width:47.5%; }
+.aq-template-wrapper .aq_span4 .aq_span3 { width:73.75%; }
+.aq-template-wrapper .aq_span4 .aq_span4 { width:100%; }
+.aq-template-wrapper .aq_span5 .aq_span1 { width:16%; }
+.aq-template-wrapper .aq_span5 .aq_span2 { width:37%; }
+.aq-template-wrapper .aq_span5 .aq_span3 { width:58%; }
+.aq-template-wrapper .aq_span5 .aq_span4 { width:79%; }
+.aq-template-wrapper .aq_span5 .aq_span5 { width:100%; }
+.aq-template-wrapper .aq_span6 .aq_span1 { width:12.5%; }
+.aq-template-wrapper .aq_span6 .aq_span2 { width:30%; }
+.aq-template-wrapper .aq_span6 .aq_span3 { width:47.5%; }
+.aq-template-wrapper .aq_span6 .aq_span4 { width:65%; }
+.aq-template-wrapper .aq_span6 .aq_span5 { width:82.5%; }
+.aq-template-wrapper .aq_span6 .aq_span6 { width:100%; }
+.aq-template-wrapper .aq_span7 .aq_span1 { width:10%; }
+.aq-template-wrapper .aq_span7 .aq_span2 { width:25%; }
+.aq-template-wrapper .aq_span7 .aq_span3 { width:40%; }
+.aq-template-wrapper .aq_span7 .aq_span4 { width:55%; }
+.aq-template-wrapper .aq_span7 .aq_span5 { width:70%; }
+.aq-template-wrapper .aq_span7 .aq_span6 { width:85%; }
+.aq-template-wrapper .aq_span7 .aq_span7 { width:100%; }
+.aq-template-wrapper .aq_span8 .aq_span1 { width:8.13%; }
+.aq-template-wrapper .aq_span8 .aq_span2 { width:21.25%; }
+.aq-template-wrapper .aq_span8 .aq_span3 { width:34.38%; }
+.aq-template-wrapper .aq_span8 .aq_span4 { width:47.5%; }
+.aq-template-wrapper .aq_span8 .aq_span5 { width:60.63%; }
+.aq-template-wrapper .aq_span8 .aq_span6 { width:73.75%; }
+.aq-template-wrapper .aq_span8 .aq_span7 { width:86.88%; }
+.aq-template-wrapper .aq_span8 .aq_span8 { width:100%; }
+.aq-template-wrapper .aq_span9 .aq_span1 { width:6.67%; }
+.aq-template-wrapper .aq_span9 .aq_span2 { width:18.33%; }
+.aq-template-wrapper .aq_span9 .aq_span3 { width:30%; }
+.aq-template-wrapper .aq_span9 .aq_span4 { width:41.67%; }
+.aq-template-wrapper .aq_span9 .aq_span5 { width:53.33%; }
+.aq-template-wrapper .aq_span9 .aq_span6 { width:65%; }
+.aq-template-wrapper .aq_span9 .aq_span7 { width:76.67%; }
+.aq-template-wrapper .aq_span9 .aq_span8 { width:88.33%; }
+.aq-template-wrapper .aq_span9 .aq_span9 { width:100%; }
+.aq-template-wrapper .aq_span10 .aq_span1 { width:5.5%; }
+.aq-template-wrapper .aq_span10 .aq_span2 { width:16%; }
+.aq-template-wrapper .aq_span10 .aq_span3 { width:26.5%; }
+.aq-template-wrapper .aq_span10 .aq_span4 { width:37%; }
+.aq-template-wrapper .aq_span10 .aq_span5 { width:47.5%; }
+.aq-template-wrapper .aq_span10 .aq_span6 { width:58%; }
+.aq-template-wrapper .aq_span10 .aq_span7 { width:68.5%; }
+.aq-template-wrapper .aq_span10 .aq_span8 { width:79%; }
+.aq-template-wrapper .aq_span10 .aq_span9 { width:89.5%; }
+.aq-template-wrapper .aq_span10 .aq_span10 { width:100%; }
+.aq-template-wrapper .aq_span11 .aq_span1 { width:4.55%; }
+.aq-template-wrapper .aq_span11 .aq_span2 { width:14.09%; }
+.aq-template-wrapper .aq_span11 .aq_span3 { width:23.64%; }
+.aq-template-wrapper .aq_span11 .aq_span4 { width:33.18%; }
+.aq-template-wrapper .aq_span11 .aq_span5 { width:42.73%; }
+.aq-template-wrapper .aq_span11 .aq_span6 { width:52.27%; }
+.aq-template-wrapper .aq_span11 .aq_span7 { width:61.82%; }
+.aq-template-wrapper .aq_span11 .aq_span8 { width:71.36%; }
+.aq-template-wrapper .aq_span11 .aq_span9 { width:80.91%; }
+.aq-template-wrapper .aq_span11 .aq_span10 { width:90.45%; }
+.aq-template-wrapper .aq_span11 .aq_span11 { width:100%; }
+.aq-template-wrapper .aq_span12 .aq_span1 { width:3.75%; }
+.aq-template-wrapper .aq_span12 .aq_span2 { width:12.5%; }
+.aq-template-wrapper .aq_span12 .aq_span3 { width:21.25%; }
+.aq-template-wrapper .aq_span12 .aq_span4 { width:30%; }
+.aq-template-wrapper .aq_span12 .aq_span5 { width:38.75%; }
+.aq-template-wrapper .aq_span12 .aq_span6 { width:47.5%; }
+.aq-template-wrapper .aq_span12 .aq_span7 { width:56.25%; }
+.aq-template-wrapper .aq_span12 .aq_span8 { width:65%; }
+.aq-template-wrapper .aq_span12 .aq_span9 { width:73.75%; }
+.aq-template-wrapper .aq_span12 .aq_span10 { width:82.5%; }
+.aq-template-wrapper .aq_span12 .aq_span11 { width:91.25%; }
+.aq-template-wrapper .aq_span12 .aq_span12 { width:100%; }
+
+/* General 
+========================================================================*/
+h4.aq-block-title { margin:  0 0 20px; }
+
+/* Alert Boxes 
+========================================================================*/
+.aq_alert{
+	border:1px solid #d8d8d8; 
+	background-color:#FEFEFE;
+	padding:10px 20px;
+	margin:0.5em 0 20px;
+}
+	.aq_alert h1,
+	.aq_alert h2,
+	.aq_alert h3,
+	.aq_alert h4,
+	.aq_alert h5,
+	.aq_alert h6 {
+		margin: 0 0 5px;
+	}
+.aq_alert.info{background-color:#EFF9FF;border:1px solid #b4ddfa; color: #2b6181;}
+	.aq_alert.info h1,
+	.aq_alert.info h2,
+	.aq_alert.info h3,
+	.aq_alert.info h4,
+	.aq_alert.info h5,
+	.aq_alert.info h6 {
+		color: #2b6181;
+	}
+.aq_alert.note{background-color:#FFFCE5;border:1px solid #ffdc7d; color:#D69A2A;}
+	.aq_alert.note h1,
+	.aq_alert.note h2,
+	.aq_alert.note h3,
+	.aq_alert.note h4,
+	.aq_alert.note h5,
+	.aq_alert.note h6 {
+		color: #D69A2A;
+	}
+.aq_alert.warn{background-color:#ffcaca;border:1px solid #eb8d8d; color: #da3838;}
+	.aq_alert.warn h1,
+	.aq_alert.warn h2,
+	.aq_alert.warn h3,
+	.aq_alert.warn h4,
+	.aq_alert.warn h5,
+	.aq_alert.warn h6 {
+		color: #da3838;
+	}
+.aq_alert.tips{background-color:#d6fedd;border:1px solid #86d492; color:#589261;}
+	.aq_alert.tips h1,
+	.aq_alert.tips h2,
+	.aq_alert.tips h3,
+	.aq_alert.tips h4,
+	.aq_alert.tips h5,
+	.aq_alert.tips h6 {
+		color:#589261;
+	}
+.aq_alert h1, .aq_alert h2, .aq_alert h3 { margin: 0; }
+
+
+/* Tabs 
+========================================================================*/
+.aq_block_tabs .ui-tabs-hide {
+    position: absolute;
+    left: -9999px;
+}
+
+.aq_block_tabs {
+	background: none;
+	margin: 0.5em 0 2em 0;
+}
+
+.aq_block_tabs ul.aq-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: 0;
+	float: none;
+}
+
+.aq_block_tabs ul.aq-nav li {
+	float: left;
+	position: relative;
+	margin: 0 2px -1px 0!important;
+	z-index: 10;
+	list-style: none;
+}
+	
+
+.aq_block_tabs ul.aq-nav li a {
+	border: 1px solid #e1e1e1;
+	border-bottom: none;
+	display: block;
+	overflow: hidden;
+	padding: 5px 10px 0 10px;
+	height: 26px;
+	background: #FBFBFB;
+	margin: 0;
+	text-decoration: none;
+	color: #373737;
+}
+
+.aq_block_tabs ul.aq-nav li a:hover {
+	background: #fff;
+	margin: 0;
+}
+
+.aq_block_tabs ul.aq-nav li.ui-tabs-active a {
+	height: 27px;
+	background: #fff;
+}
+
+.aq_block_tabs .aq-tab {
+	background: #fff;
+	padding: 15px 15px 5px;
+	border: 1px solid #dfdfdf;
+	display: none;
+}
+	.aq_block_tabs .aq-tab.first-child { 
+		position: relative; 
+		left: 0;
+	}
+
+/* Toggles & Accordion
+====================================================================*/
+.aq_block_toggle,
+.aq_block_accordion {
+	background: #fff;
+	border: 1px solid #D8D8D8;
+	margin: 0.5em 0 10px;
+	position: relative;
+}
+.aq_block_toggles_wrapper { margin: 0 0 20px; }
+.aq_block_accordion_wrapper { margin: 0.5em 0 20px; }
+	.aq_block_accordion { 
+		border-top: none;
+		margin: 0;
+	}
+	.aq_block_accordion.first-child { 
+		border-top: 1px solid #D8D8D8;
+		margin: 0.5em 0 0;
+	}
+	.aq_block_accordion.last-child { 
+		margin: 0 0 10px;
+	}
+	
+	.aq_block_toggle div.arrow,
+	.aq_block_accordion div.arrow { 
+		display: block;
+		float: right;
+		width: 14px;
+		height: 14px;
+		position: absolute;
+		right: 15px;
+		top: 13px;
+		background-image: url(../images/dropdown-arrows.png);
+		background-repeat: no-repeat;
+		background-position: -40px -3px;
+	}
+	.aq_block_toggle h2.tab-head,
+	.aq_block_accordion h2.tab-head { 
+		font-size: 14px;
+		line-height: 21px;
+		font-weight: normal;
+		margin: 0;
+		padding: 10px 70px 10px 15px;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	.aq_block_toggle h2.tab-head a,
+	.aq_block_accordion h2.tab-head a {  }
+	.aq_block_toggle:hover div.arrow,
+	.aq_block_accordion:hover div.arrow { background-position: -9px -3px; }
+	.aq_block_toggle .tab-body,
+	.aq_block_accordion .tab-body { 
+		display: none;
+		background: url(../images/drop-bg.png) repeat-x 0 top;
+		overflow: hidden;
+		padding: 15px 15px 5px;
+	}
+	.aq_block_toggle .tab-body.open,
+	.aq_block_accordion .tab-body.open{ 
+		display: block;
+	}
