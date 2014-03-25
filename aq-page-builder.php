@@ -3,7 +3,7 @@
 Plugin Name: Ebor Page Builder
 Plugin URI: http://www.madeinebor.com
 Description: Easily create custom page templates with intuitive drag-and-drop interface. Requires PHP5 and WP3.5. Ebor Page Builder is built upon Aqua Page Builder.
-Version: 1.1.4
+Version: 1.1.5
 Author: TommusRhodus
 Author URI: http://www.madeinebor.com
 */
