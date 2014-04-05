@@ -9,28 +9,6 @@ Author URI: http://www.madeinebor.com
 */
 
 /**
- * Updater
- */
-include_once('updater.php');
-
-if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
-    $config = array(
-        'slug' => plugin_basename(__FILE__),
-        'proper_folder_name' => 'ebor-page-builder', // this is the name of the folder your plugin lives in
-        'api_url' => 'https://api.github.com/repos/tommusrhodus/ebor-page-builder', // the github API url of your github repo
-        'raw_url' => 'https://raw.github.com/tommusrhodus/ebor-page-builder/master', // the github raw url of your github repo
-        'github_url' => 'https://github.com/tommusrhodus/ebor-page-builder', // the github url of your github repo
-        'zip_url' => 'https://github.com/tommusrhodus/ebor-page-builder/archive/master.zip', // the zip url of the github repo
-        'sslverify' => true,
-        'requires' => '3.8',
-        'tested' => '3.8.1',
-        'readme' => 'README.md',
-        'access_token' => ''
-    );
-    new WP_GitHub_Updater($config);
-}
-
-/**
  * All class names & definitions have been left the same for simplicity
  */
 

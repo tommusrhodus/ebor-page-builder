@@ -37,12 +37,29 @@ if(class_exists('AQ_Page_Builder')) {
 		return $blocks;
 	}
 	
+	function array_htmlspecialchars(&$input)
+	{
+	    if (is_array($input))
+	    {
+	        foreach ($input as $key => $value)
+	        {
+	            if (is_array($value)) $input[$key] = array_htmlspecialchars($value);
+	            else $input[$key] = htmlspecialchars($value);
+	        }
+	        return $input;
+	    }
+	    return htmlspecialchars($input);
+	}
+	
 	/**
 	 * Page builder CSS Class
 	 */
 	add_action ('wp','ebor_page_builder_pluggable', 10);
 	function ebor_page_builder_pluggable(){ 
-	
+		
+		/**
+		 * CSS Size Class
+		 */
 		if(!( function_exists('aq_css_classes') )){
 			function aq_css_classes($block){
 				$block = str_replace('span', '', $block);
@@ -51,21 +68,57 @@ if(class_exists('AQ_Page_Builder')) {
 			}
 		}
 		
+		/**
+		 * Use clearfix class?
+		 * true / false
+		 */
 		if(!( function_exists('aq_css_clearfix') )){
 			function aq_css_clearfix(){
 				return true;
 			}
 		}
 		
+		/**
+		 * Shortcode start
+		 */
 		if(!( function_exists('aq_template_wrapper_start') )){
 			function aq_template_wrapper_start($template_id){
 				return '<div id="aq-template-wrapper-'.$template_id.'" class="aq-template-wrapper aq_row">';
 			}
 		}
 		
+		/**
+		 * Shortcode end
+		 */
 		if(!( function_exists('aq_template_wrapper_end') )){
 			function aq_template_wrapper_end(){
 				return '</div>';
+			}
+		}
+		
+		/**
+		 * Individual block start
+		 */
+		if(!( function_exists('ebor_before_block') )){
+			function ebor_before_block($instance){
+				extract($instance);
+				
+				$size = aq_css_classes($size);
+				$clearfix = ( aq_css_clearfix() ) ? 'clearfix' : '';
+				
+				$column_class = $first ? 'aq-first' : '';
+				
+				echo '<div id="aq-block-'.$template_id.'-'.$number.'" class="aq-block aq-block-'.$id_base.' '.$size.' '.$column_class.' '. $clearfix.'">';
+			}
+		}
+		
+		/**
+		 * Individual block end
+		 */
+		if(!( function_exists('ebor_after_block') )){
+			function ebor_after_block($instance){
+				extract($instance);
+				echo '</div>';
 			}
 		}
 		

@@ -43,7 +43,7 @@ if(!class_exists('AQ_Block')) {
 	 	 * filtering is sufficient for most cases, but nowhere near perfect!
 	 	 */
 	 	function update($new_instance, $old_instance) {
-	 		$new_instance = array_map('htmlspecialchars', array_map('stripslashes', $new_instance));
+	 		$new_instance = array_map('array_htmlspecialchars', array_map('stripslashes', $new_instance));
 	 		return $new_instance;
 	 	}
 	 	
@@ -161,20 +161,12 @@ if(!class_exists('AQ_Block')) {
 	 	
 	 	/* block header */
 	 	function before_block($instance) {
-	 		extract($instance);
-	 		
-	 		$size = aq_css_classes($size);
-	 		$clearfix = ( aq_css_clearfix() ) ? 'clearfix' : '';
-	 		
-	 		$column_class = $first ? 'aq-first' : '';
-	 		
-	 		echo '<div id="aq-block-'.$template_id.'-'.$number.'" class="aq-block aq-block-'.$id_base.' '.$size.' '.$column_class.' '. $clearfix.'">';
+	 		ebor_before_block($instance);
 	 	}
 	 	
 	 	/* block footer */
 	 	function after_block($instance) {
-	 		extract($instance);
-	 		echo '</div>';	
+	 		ebor_after_block($instance);	
 	 	}
 	 	
 	 	function get_field_id($field) {
