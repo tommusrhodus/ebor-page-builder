@@ -43,7 +43,7 @@ if(!class_exists('AQ_Block')) {
 	 	 * filtering is sufficient for most cases, but nowhere near perfect!
 	 	 */
 	 	function update($new_instance, $old_instance) {
-	 		$new_instance = array_map('array_htmlspecialchars', array_map('stripslashes', $new_instance));
+	 		$new_instance = array_map('array_htmlspecialchars', array_map('stripslashes_deep', $new_instance));
 	 		return $new_instance;
 	 	}
 	 	
