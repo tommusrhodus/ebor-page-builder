@@ -601,10 +601,10 @@ if(!class_exists('AQ_Page_Builder')) {
 
 				if ( version_compare( $wp_version, '3.5', '<' ) ) {
 					$img 	= '<img src="' . AQPB_DIR . '/assets/images/aqua-media-button.png" width="16px" height="16px" alt="' . esc_attr__( 'Add Page Template', 'framework' )  . '" />';
-					$output = '<a href="#TB_inline?width=640&inlineId=aqpb-iframe-container" class="thickbox" title="' . esc_attr__( 'Add Page Template', 'framework' )  . '">' . $img . '</a><a href="themes.php?page=ebor-page-builder" class="button button-primary">Template Builder</a>';
+					$output = '<a id="add-template-button" href="#TB_inline?width=640&inlineId=aqpb-iframe-container" class="thickbox" title="' . esc_attr__( 'Add Page Template', 'framework' )  . '">' . $img . '</a><a id="template-builder-button" href="themes.php?page=ebor-page-builder" class="button button-primary">Template Builder</a>';
 				} else {
 					$img 	= '<span class="wp-media-buttons-icon" style="background-image: url(' . AQPB_DIR . '/assets/images/aqua-media-button.png ); height: 16px; width: 15px; margin-top: 1px;"></span>';
-					$output = '<a href="#TB_inline?width=640&inlineId=aqpb-iframe-container" class="thickbox button" title="' . esc_attr__( 'Add Page Template', 'framework' ) . '" style="padding-left: .4em;">' . $img . ' ' . esc_attr__( 'Add Template', 'framework' ) . '</a><a href="themes.php?page=ebor-template-builder" class="button button-primary">Template Builder</a>';
+					$output = '<a id="add-template-button" href="#TB_inline?width=640&inlineId=aqpb-iframe-container" class="thickbox button" title="' . esc_attr__( 'Add Page Template', 'framework' ) . '" style="padding-left: .4em;">' . $img . ' ' . esc_attr__( 'Add Template', 'framework' ) . '</a><a id="template-builder-button" href="themes.php?page=ebor-template-builder" class="button button-primary">Template Builder</a>';
 				}
 				
 			}
