@@ -296,6 +296,11 @@ jQuery(document).ready(function($){
 		    //set dynamic width for blocks inside columns
 		    resizable_dynamic_width(ui.item.attr('id'));
 		    
+		    //remove fixed item height
+		    ui.item.css({
+		    	'height' : ''
+		    });
+		    
 		    //trigger resize
 		    ui.item.trigger("resize");
 		    ui.item.trigger("resizestop");
