@@ -54,7 +54,7 @@ if(class_exists('AQ_Page_Builder')) {
 	/**
 	 * Page builder CSS Class
 	 */
-	add_action ('wp','ebor_page_builder_pluggable', 10);
+	add_action ('after_setup_theme','ebor_page_builder_pluggable', 10);
 	function ebor_page_builder_pluggable(){ 
 		
 		/**
