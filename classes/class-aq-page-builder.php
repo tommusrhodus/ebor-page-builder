@@ -131,7 +131,7 @@ if(!class_exists('AQ_Page_Builder')) {
 		function view_enqueue() {
 			
 			// front-end css
-			wp_register_style( 'aqpb-view-css', $this->url.'assets/css/aqpb-view.css', array(), time(), 'all');
+			wp_register_style( 'aqpb-view-css', $this->url.'assets/css/aqpb-view.css', array(), '060284', 'all');
 			wp_enqueue_style('aqpb-view-css');
 				
 			// front-end js
