@@ -185,7 +185,7 @@ DO NOT EDIT THIS
 
 /* Quick List */
 .quick_list {
-	display: none; position: fixed; width: 100%; height: 100%; background: rgba(255,255,255,0.8); top: 0; left: 0; z-index: 999; padding: 50px 30% 0;
+	display: none; position: fixed; overflow: scroll; width: 100%; height: 100%; background: rgba(255,255,255,0.8); top: 0; left: 0; z-index: 999; padding: 50px 30% 0;
 }
 .quick_list a {
 	float: left;
