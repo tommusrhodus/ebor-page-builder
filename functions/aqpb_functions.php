@@ -29,14 +29,16 @@ if(class_exists('AQ_Page_Builder')) {
 		}
 	}
 	
-	/** Get list of all blocks **/
-	function aq_get_blocks($template_id) {
+	/** Get list of all blocks * */
+	function aq_get_blocks( $template_id ) {
 		global $aq_page_builder;
-		$blocks = $aq_page_builder->get_blocks($template_id);
-		
-		return $blocks;
+		if ( is_a( $aq_page_builder, 'AQ_Page_Builder' ) ) {
+			$blocks = $aq_page_builder->get_blocks( $template_id );
+		} else {
+			return null;
+		}
 	}
-	
+
 	function array_htmlspecialchars(&$input)
 	{
 	    if (is_array($input))
