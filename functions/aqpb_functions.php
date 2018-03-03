@@ -37,6 +37,7 @@ if(class_exists('AQ_Page_Builder')) {
 		} else {
 			return null;
 		}
+		return $blocks;
 	}
 
 	function array_htmlspecialchars(&$input)
